@@ -2,7 +2,7 @@
 body {
     display: flex;
     flex-direction: column;
-    border: 1px solid blue;
+    margin: 0;
 }
 
 .background_one {
@@ -95,6 +95,7 @@ button {
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-bottom: 10px;
 }
 
 .pic{
@@ -109,4 +110,76 @@ button {
     flex-direction: column;
     align-items: center;
     width: 135px;
+}
+
+/* 3rd div */
+.background_two {
+    background-color: #e5e7eb;
+    display: flex;
+    justify-content: center;
+}
+
+.container_five p{
+    font-size: 32px;
+    color: #1f2937;
+}
+
+.para {
+    display: flex;
+    justify-content: end;
+    margin-top: 5px;
+}
+
+/* 4th div */
+.background_three {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_six {
+    display: flex;
+    background-color: #3882f6;
+    color: #f9faf8;
+    margin: 10px 0;
+}
+
+.container_seven {
+    padding: 10px 0 0 10px;
+    font-size: 18px;
+}
+
+.container_eight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.para_two {
+    color: #e5e7eb;
+    margin-top: 5px;
+    font-size: 12px;
+    margin: 3px 0 12px 0;
+}
+
+.button {
+    border: 2px solid #f9faf8;
+}
+
+.para_three {
+    font-size: 18px;
+    margin: 3px 0;
+}
+
+/* footer */
+.background_four {
+    display: flex;
+    justify-content: center;
+    background-color: #1f2937;
+}
+
+.footer {
+    color: #f9faf8;
+    padding: 10px;
 }
