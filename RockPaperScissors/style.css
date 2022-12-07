@@ -1,0 +1,35 @@
+body {
+    background-color: grey;
+}
+
+.score {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: larger;
+    font-weight: 900;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    gap: 29px;
+}
+
+button {
+    font-size: 45px;
+    outline: none;
+    margin: 20px;
+    background: none;
+    border: none;
+    transition: 100ms;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+span {
+    display: flex;
+    justify-content: center;
+}

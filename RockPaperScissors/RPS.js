@@ -1,8 +1,24 @@
+const buttons=document.querySelectorAll("button");
+console.log(buttons)
+
+buttons.forEach(button => button.addEventListener("click",()=>{
+    const playerChoice=button.classList.value                //type STRING
+    getPlayerSelection(playerChoice);
+    console.log(playRound(playerChoice,getComputerChoice()))
+}))
+
+function getPlayerSelection(playerSelection) {
+    return playerSelection;
+}
+
+
 function getComputerChoice() {
     const rps = ["ROCK", "PAPER", "SCISSORS"];
     let num=Math.floor(Math.random()*3)
     return rps[num];
 }
+
+
 let playerCount=0;
 let computerCount=0;
 
@@ -38,27 +54,25 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+let computerChoice=getComputerChoice()
+console.log(computerChoice)
 
 
 
 
-function game() {
-    for(let i=0; i<5; i++) {
-        let playerSelection = prompt("ROCK ,PAPER OR SCISSORS???").toUpperCase();
-        let computerSelection = getComputerChoice();
-        console.log(playerSelection)
-        console.log(computerSelection)
-        console.log(playRound(playerSelection, computerSelection));
-        // playRound();
-    }
-    if (playerCount> computerCount) {
-        return console.log("You Won");
-    }
-    else if (computerCount> playerCount) {
-        return console.log("You Lost")
-    }
-    else {
-        return console.log("Draw");
-    }
-}
-game();
+
+
+// function game() {
+//     let playerSelection=playerChoice()
+//     console.log(typeof(playerSelection))
+//     if (playerCount> computerCount) {
+//         return console.log("You Won");
+//     }
+//     else if (computerCount> playerCount) {
+//         return console.log("You Lost")
+//     }
+//     else {
+//         return console.log("Draw");
+//     }
+// }
+// game();
