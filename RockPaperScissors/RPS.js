@@ -1,15 +1,16 @@
 const buttons=document.querySelectorAll("button");
-console.log(buttons)
+const scorePlayer=document.querySelector("[data-youScore]");
+const scoreComputer=document.querySelector("[data-computerScore]")
+
 
 buttons.forEach(button => button.addEventListener("click",()=>{
-    const playerChoice=button.classList.value                //type STRING
-    getPlayerSelection(playerChoice);
-    console.log(playRound(playerChoice,getComputerChoice()))
+    const playerChoice=button.classList.value                //type STRIN
+    let result=playRound(playerChoice,getComputerChoice())
+
+    const div=document.querySelector(".scoreboard");
+    div.textContent=result
 }))
 
-function getPlayerSelection(playerSelection) {
-    return playerSelection;
-}
 
 
 function getComputerChoice() {
@@ -18,44 +19,55 @@ function getComputerChoice() {
     return rps[num];
 }
 
+let round=0;
 
-let playerCount=0;
-let computerCount=0;
-
-function playRound(playerSelection, computerSelection) {
-    if ((playerSelection==="ROCK") && (computerSelection==="PAPER")) {
-        computerCount+=1;
+function playRound(playerSelection, computerSelection) {    
+    if(round===5) {
+        if(parseInt(scorePlayer.innerText)>parseInt(scoreComputer.innerText)) {
+            return "CONGRATULATIONS!! YOU WON"
+           }
+           else return "HARD LUCK! YOU LOST"
+        }
+    else if ((playerSelection==="ROCK") && (computerSelection==="PAPER")) {
+        round+=1;
+        scoreComputer.innerText= parseInt(scoreComputer.innerText)+ 1;
         return "YOU LOSE! PAPER beats ROCK";
     }
     
     else if ((playerSelection==="ROCK") && (computerSelection==="SCISSORS")) {
-        playerCount+=1;
+        round+=1;
+        scorePlayer.innerText=parseInt(scorePlayer.innerText)+ 1;
         return "YOU WIN! ROCK beats SCISSORS";
     }
 
     else if (playerSelection==="PAPER" && computerSelection==="SCISSORS") {
-        computerCount+=1;
+        round+=1;
+        scoreComputer.innerText= parseInt(scoreComputer.innerText)+ 1;
         return "YOU LOSE! SCISSORS beats PAPER"
     }
     else if (playerSelection==="SCISSORS" && computerSelection==="ROCK") {
-        computerCount+=1;
+        round+=1;
+        scoreComputer.innerText= parseInt(scoreComputer.innerText)+ 1;
         return "YOU LOSE! ROCK beats SCISSORS";
     }
     else if (playerSelection==="PAPER" && computerSelection==="ROCK") {
-        playerCount+=1;
+        round+=1;
+        scorePlayer.innerText=parseInt(scorePlayer.innerText)+ 1;
         return "YOU WIN! PAPER beats ROCK"
     }
     else if (playerSelection==="SCISSORS" && computerSelection==="PAPER") {
-        playerCount+=1;
+        round+=1;
+        scorePlayer.innerText=parseInt(scorePlayer.innerText)+ 1;
         return "YOU WIN! SCISSORS beats PAPER";
     }
     else {
+        round+=1;
         return "DRAW"
     }
 }
 
 let computerChoice=getComputerChoice()
-console.log(computerChoice)
+
 
 
 
